@@ -1,0 +1,11 @@
+zerops:
+  - setup: flaresolverr
+    run:
+      base: docker@26.1
+      prepareCommands:
+        - docker image pull flaresolverr/flaresolverr:latest
+      start: docker run -p 8191:8191 flaresolverr/flaresolverr:latest
+
+      ports:
+        - port: 8191
+          httpSupport: true
